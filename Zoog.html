@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+  function setup() {
+  createCanvas(800, 800);
+}
+
+function draw() {
+  background(220);
+  fill("#9ccfd1")// color blue of wings 
+  rect(350,400,25,200)// left leg
+  rect(425,400,25,200)// right leg
+  triangle(400,550,700,400,450,400)// right wing
+  triangle(350,550,100,400,350,400)// left wing
+ 
+  fill("black")// text color
+  stroke("black")// outline color
+  strokeWeight(2);// thickness of outline
+  textSize(32);
+  text("I am a bird!", 325,200)// text above bird's head
+  
+  line(200,400,380,520)// bird's stick arms
+  line(600,400,380,520)
+
+  fill("#9ccfd1")// color of bird's body
+  strokeWeight(4.75);// thickness of bird's body
+  ellipse(400,480,200,200)// bird's torso
+  ellipse(400,340,200,200)// bird's head
+  
+  fill("black")// eye color
+  ellipse(360,330,20,20)// left eye
+  ellipse(440,340,20,20)// right eye
+  point(450,375,300,300)// the beauty mark at the bottom right of the bird's face
+  
+  fill("#edb150")// color of beak
+  strokeWeight(4);// thickness of beak
+  text("V",390,400)// beak
+  
+  fill("red")// color of present
+  strokeWeight(5);// the outline thickness of the present
+  rect(350,450,100,100)// present itself
+  
+  strokeWeight(8);// thickness of bow outline
+  textSize(182);// size of bow
+  fill("Green")// color of bow
+  text("+",346,545)// the bow on the present
+  
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/Amandal4012/p5js/blob/master/Zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
