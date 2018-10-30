@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+    var size;
+var r1;
+var g3;
+var b2;
+var r
+var b
+var g
+var thickness; 
+var opacity;
+var opacity= 200
+
+// this project represents the Chinese New Year; from glowing lanterns to colorful red envelopes, and also confetti!
+
+function setup() {
+  createCanvas(600, 600);
+  size = 50
+  r= random(0,255)// variables for color
+  g= random(0,255)
+  b= random(0,255)
+  background(r,g,b);
+  //thickness= random(0,0.1)
+}
+
+function draw(){
+  strokeWeight(1.5);
+  // here are the strings hanging from the lanterns below
+  stroke("red")
+  line(100,150,100,100)// string connecting first lantern to white string
+  line(500,150,500,100)// string connecting second lantern to white string
+  line(80,310,80,245)// first lantern 1st string
+  line(100,330,100,250)// first lantern 2nd string
+  line(120,310,120,245)// first lantern 3rd string
+  line(480,310,480,245)// second lantern 1st string
+  line(500,330,500,250)// second lantern 2nd string
+  line(520,310,520,245)// second lantern 3rd string
+  ellipse(100,200,100,100)// first lantern
+  ellipse(500,200,100,100)// second lantern
+  noFill();// the curved lines on the lanterns
+  line(59, 170, 150, 210);// lantern 1 slash line
+  line(460, 170, 550, 205);// lantern 2 slash line
+  stroke("black");// color of line connecting lanterns
+  line(0,100,600,100)// the line connecting lanterns
+ 
+}
+
+function mouseMoved(){
+  
+  background(200,32)
+  r= random(0,255)// color variables set to be random + change as mouse moves
+  g= random(0,255)
+  b= random(0,255)
+   fill(r,g,b,50)// color in lanterns
+   ellipse(mouseX,mouseY, random(5,15))// these circles follow the mouse when moved
+   ellipse(random(mouseX,mouseY),random(mouseX,mouseY),random(5,15))// these are randomly spawned circles, but they also depend on the mouseX and mouseY
+   
+}         
+  
+
+function mouseDragged(){
+  background(r,g,b,32)
+  size = 50
+  translate(200,200)// used to transition motion of shapes of red envelopes smoothly
+  // random colors of bgr below
+  r =random(150,255)
+  g =random(150,255)
+  b =random(150,255)
+  r1 = random(209)
+  g2 = random(200)
+  b3 = random(120)
+  fill(r1,g2,b3,opacity);// opacity allows for fading of envelopes
+  // below are the red envelopes themselves
+  rectMode(CENTER);
+  rect(mouseX-200,mouseY-200,size,100);
+  triangle(mouseX-225,mouseY-250,mouseX-175,mouseY-250,mouseX-200,mouseY-200);
+  
+  opacity -= 0.01// envelopes slowly lose opacity as mouse is kept dragging
+ 
+  
+  
+}
+
+function keyPressed(){
+  r= random(0,255)// this code changes the background color randomly upon pressing a key
+  g= random(0,255)
+  b= random(0,255)
+  background(r,g,b);
+  
+  
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/Amandal4012/p5js/blob/master/InteractiveProject.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
